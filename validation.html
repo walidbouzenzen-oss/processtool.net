@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowmax Transient validation | Benchmarks against transient theory | ProcessTool</title>
+<meta name="description" content="The Flowmax transient solver checked against the closed-form theory of hydraulic transients: 10 benchmark cases, 121 values, all within tolerance.">
+<link rel="canonical" href="https://processtool.net/validation">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flowmax by ProcessTool">
+<meta property="og:title" content="Flowmax Transient validation | Benchmarks against transient theory | ProcessTool">
+<meta property="og:description" content="The Flowmax transient solver checked against the closed-form theory of hydraulic transients: 10 benchmark cases, 121 values, all within tolerance.">
+<meta property="og:url" content="https://processtool.net/validation">
+<meta property="og:image" content="https://processtool.net/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Flowmax","applicationCategory":"EngineeringApplication","operatingSystem":"Windows","publisher":{"@type":"Organization","name":"ProcessTool","email":"support@processtool.net","address":"Doha, Qatar"},"offers":{"@type":"Offer","price":"990","priceCurrency":"USD"}}</script>
+</head>
+<body>
+<div class="top">
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Flowmax home"><img src="img/logo.png" alt="Flowmax logo"><span>Flowmax<small>BY PROCESSTOOL</small></span></a>
+  <nav class="nav"><div class="dd"><button class="dd-btn" type="button" aria-haspopup="true">Flowmax <span aria-hidden="true">&#9662;</span></button><div class="dd-menu"><a href="liquid.html">Liquid</a><a href="transient.html">Transient</a><a href="gas-multiphase.html">Gas & Multiphase</a></div></div><a href="tutorials.html">Tutorials</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  <a class="btn white" href="contact.html">Free trial</a>
+</div></header>
+<div class="hero page-hero plain"><div class="wrap">
+  <div><div class="kicker">Flowmax &middot; Transient</div><h1>Validated against the textbooks</h1><p>The transient solver of Flowmax is checked against the closed-form theory of hydraulic transients: results any engineer can verify in Wylie &amp; Streeter, Chaudhry, Thorley, Parmakian and Jaeger.</p><div class="cta"><a class="btn white" href="contact.html">Request a free trial</a><a class="btn out" href="transient.html">See Transient &rarr;</a></div></div>
+  
+</div><svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C360,100 720,10 1080,40 C1260,55 1380,70 1440,60 L1440,90 L0,90 Z" fill="#fff"/></svg></div>
+</div>
+<section style="padding-top:40px"><div class="wrap">
+  <div class="proof">
+    <div><b>10</b><span>benchmark cases</span></div>
+    <div><b>121</b><span>values compared</span></div>
+    <div><b>121</b><span>within tolerance</span></div>
+    <div><b>2.7 %</b><span>largest deviation</span></div>
+  </div>
+</div></section>
+<section style="padding-top:20px"><div class="wrap">
+  <div class="center"><span class="label">The ten cases</span><h2>Theory against Flowmax.</h2></div>
+  <div style="overflow-x:auto"><table class="data"><tr><th>Case</th><th>Theory</th><th>Values compared</th><th>Largest deviation</th><th>Result</th></tr><tr><td><b>A</b></td><td>Wave speed of a liquid in an elastic pipe</td><td>27</td><td>1.14 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>B</b></td><td>Instantaneous closure: the Joukowsky rise and the timing of the wave</td><td>18</td><td>0.96 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>C</b></td><td>Gradual closure: Allievi's interlocking equations</td><td>19</td><td>0.035 m</td><td class=ok>&#10003; within</td></tr><tr><td><b>D</b></td><td>Establishment of flow: the rigid water column</td><td>10</td><td>1.06 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>E</b></td><td>Mass oscillation of a surge tank</td><td>5</td><td>2.68 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>F</b></td><td>Air vessel: the column on a gas spring</td><td>10</td><td>1.32 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>G</b></td><td>A tank whose level moves: draining through a valve</td><td>5</td><td>0.39 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>H</b></td><td>Run-down of a tripped pump on a resistance</td><td>6</td><td>0.56 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>I</b></td><td>Column separation at a closed valve: the discrete vapour cavity</td><td>12</td><td>2.48 %</td><td class=ok>&#10003; within</td></tr><tr><td><b>K</b></td><td>Surge relief valve: opening and flow</td><td>9</td><td>0.00 %</td><td class=ok>&#10003; within</td></tr></table></div>
+</div></section>
+<section class="pale"><div class="wrap">
+  <div class="center"><span class="label">How a case is judged</span><h2>Nothing tuned to fit.</h2></div>
+  <div class="grid3">
+    <div class="feature"><h3>The smallest model</h3><p>Each case builds the smallest Flowmax model the theory describes, runs it, and sets the two results side by side.</p></div>
+    <div class="feature"><h3>A tolerance on every value</h3><p>1 to 3 % for a quantity the theory gives exactly, and one or two time steps for a time.</p></div>
+    <div class="feature"><h3>Nothing adjusted</h3><p>A value outside its tolerance is never tuned to fit: it is explained, and what it says about the program is reported.</p></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <div class="center"><span class="label">What the comparison looks like</span><h2>Three of the ten cases.</h2></div>
+  <div class="gallery three">
+<figure><img src="img/val1-joukowsky.webp" alt="Case B, instantaneous closure: the Joukowsky pressure rise at the valve and at mid-length, and the timing of the wave." loading="lazy"><figcaption>Case B, instantaneous closure: the Joukowsky pressure rise at the valve and at mid-length, and the timing of the wave.</figcaption></figure>
+<figure><img src="img/val2-air-vessel.webp" alt="Case F, air vessel: gas pressure, gas volume and liquid level as the column swings on its gas spring." loading="lazy"><figcaption>Case F, air vessel: gas pressure, gas volume and liquid level as the column swings on its gas spring.</figcaption></figure>
+<figure><img src="img/val3-column-separation.webp" alt="Case I, column separation: the pressure at a closed valve holds at vapour pressure while the cavity is open, then rises when it closes." loading="lazy"><figcaption>Case I, column separation: the pressure at a closed valve holds at vapour pressure while the cavity is open, then rises when it closes.</figcaption></figure>
+  </div>
+  <div class="legal" style="margin-top:44px"><h2>References</h2><ul>
+    <li>Wylie, E. B. and Streeter, V. L., Fluid Transients in Systems, Prentice Hall, 1993.</li>
+    <li>Chaudhry, M. H., Applied Hydraulic Transients, 3rd edition, Springer, 2014.</li>
+    <li>Thorley, A. R. D., Fluid Transients in Pipeline Systems, 2nd edition, Professional Engineering Publishing, 2004.</li>
+    <li>Parmakian, J., Waterhammer Analysis, Dover, 1963.</li>
+    <li>Jaeger, C., Fluid Transients in Hydro-Electric Engineering Practice, Blackie, 1977.</li>
+    <li>Simpson, A. R. and Wylie, E. B., Large water-hammer pressures for column separation in pipelines, Journal of Hydraulic Engineering 117 (10), 1991.</li>
+    <li>Bergant, A., Simpson, A. R. and Tijsseling, A. S., Water hammer with column separation: a historical review, Journal of Fluids and Structures 22, 2006.</li>
+  </ul></div>
+</div></section>
+<div class="band"><h2>Run your own transient study.</h2><p>Try the Transient mode of Flowmax on your own network.</p><div class="cta"><a class="btn white" href="contact.html">Request a free trial</a></div></div><footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="index.html"><img src="img/logo.png" alt=""><span>Flowmax<small>BY PROCESSTOOL</small></span></a>
+      <p style="margin-top:14px;max-width:300px">One platform, three modes: Liquid, Transient and Gas &amp; Multiphase network analysis for process, pipeline, oil &amp; gas and fire water engineers.</p></div>
+    <div><h4>Flowmax</h4><a href="liquid.html">Liquid</a><a href="transient.html">Transient</a><a href="gas-multiphase.html">Gas &amp; Multiphase</a><a href="case-study-lng.html">Case study: LNG plant</a><a href="tutorials.html">Tutorials</a><a href="pricing.html">Pricing</a><a href="validation.html">Validation</a></div>
+    <div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html">Free trial</a><a href="mailto:support@processtool.net">support@processtool.net</a></div>
+    <div><h4>Legal</h4><a href="terms-and-conditions.html">Terms and Conditions</a><a href="refund-policy.html">Refund Policy</a><a href="privacy-policy.html">Privacy Policy</a></div>
+  </div>
+  <div class="base"><span>&copy; 2026 ProcessTool &middot; Doha, Qatar</span><span>Flowmax is a product of ProcessTool</span></div>
+</div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>
