@@ -21,30 +21,34 @@
     });
   });
 
-  // the contact form : sent from the page when it has a service address (data-endpoint), else prepared as an email to support@processtool.net.
-  // (21 Oct 2026 : FormSubmit is taken off - Symantec Endpoint Protection calls its domain malicious, and a visitor on a company laptop
-  // saw "Malicious Site Blocked" on pressing Send.)
+  // the contact form : sent from the page through the service address (data-endpoint) ; when a company network stops it, the visitor gets
+  // the same message ready as an email to support@processtool.net (Walid, 21 Oct 2026 : "if issue happen let them email us"). Without an
+  // address, the form prepares the email straight away.
   var form = document.querySelector('form.contact');
+  function mailto(f) {
+    var lines = [];
+    ['name', 'email', 'company', 'industry', 'inquiry', 'message'].forEach(function (k) { if (f.get(k)) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + f.get(k)); });
+    return 'mailto:support@processtool.net?subject=' + encodeURIComponent('Flowmax - ' + (f.get('inquiry') || 'enquiry')) + '&body=' + encodeURIComponent(lines.join('\n'));
+  }
   if (form && !form.dataset.endpoint) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var f = new FormData(form), lines = [];
-      ['name', 'email', 'company', 'industry', 'inquiry', 'message'].forEach(function (k) { if (f.get(k)) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + f.get(k)); });
-      location.href = 'mailto:support@processtool.net?subject=' + encodeURIComponent('Flowmax - ' + (f.get('inquiry') || 'enquiry')) + '&body=' + encodeURIComponent(lines.join('\n'));
+      location.href = mailto(new FormData(form));
     });
     form = null;
   }
-  function done(ok, text) {
+  function done(ok, href) {
     var box = document.createElement('div');
     box.className = 'form-done' + (ok ? '' : ' failed');
     box.innerHTML = ok ? '<h3>Thank you, your message is sent.</h3><p>We reply within two business days, from support@processtool.net.</p>'
-      : '<h3>The message could not be sent.</h3><p>' + text + ' Please write to <a href="mailto:support@processtool.net">support@processtool.net</a>.</p>';
+      : '<h3>Your network did not let the form through.</h3><p>Your message is ready as an email to support@processtool.net: press the button, then Send.</p>'
+        + '<p style="margin-top:16px"><a class="btn blue" href="' + href + '">Send it by email</a></p>';
     form.parentNode.replaceChild(box, form);
   }
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var data = {};
-    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    var f = new FormData(form), data = {}, href = mailto(f);
+    f.forEach(function (v, k) { data[k] = v; });
     if (data._honey) return;                                                  // a robot filled the hidden field
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
@@ -52,9 +56,8 @@
     fetch(form.dataset.endpoint, {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data)
     }).then(function (r) { return r.json(); }).then(function (r) {
-      if (r.success === true || r.success === 'true') done(true);
-      else done(false, r.message || '');
-    }).catch(function () { done(false, ''); });
+      done(r.success === true || r.success === 'true', href);
+    }).catch(function () { done(false, href); });
   });
   if (location.hash === '#sent' && form) done(true);
 })();
