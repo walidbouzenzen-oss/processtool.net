@@ -281,9 +281,9 @@ table.cmp .no { color: #b8c3d1; }
 .appframe .bar b, .mshot .bar b { margin-left: auto; font-weight: 400; color: var(--dim); font-size: 11px; letter-spacing: .1em; }
 .appframe img.shot-hero { width: 100%; display: block; cursor: zoom-in; }
 /* the mode cards : the name on a coloured band, a framed close-up of the program */
-.m-liquid { --mc: var(--blue); }
-.m-transient { --mc: #d9480f; }
-.m-gas { --mc: var(--green); }
+.m-liquid { --mc: #2e8fd8; }
+.m-transient { --mc: #0f6fc6; }
+.m-gas { --mc: #0a3d74; }
 .modes3 .mhead { display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: var(--mc); color: #fff; }
 .modes3 .mhead .mic { width: 50px; height: 50px; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
 .modes3 .mhead .mic svg { width: 32px; height: 32px; display: block; }
@@ -293,7 +293,7 @@ table.cmp .no { color: #b8c3d1; }
 .modes3 .mshot .bar { height: 26px; font-size: 11.5px; }
 .modes3 .mshot > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; cursor: zoom-in; display: block; }
 .modes3 .card .t { padding-top: 16px; }
-.modes3 .m-gas .new { background: #fff; color: var(--green); }
+.modes3 .m-gas .new { background: #29a8e0; color: #fff; }
 /* one picture alone in a gallery */
 .gallery.one { grid-template-columns: 1fr; max-width: 920px; margin-left: auto; margin-right: auto; }
 /* examples : picture and text side by side, alternating */
