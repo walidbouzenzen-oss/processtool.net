@@ -21,8 +21,19 @@
     });
   });
 
-  // the contact form : sent from the page through FormSubmit (its /ajax/ address), the visitor stays here ; the email address if it fails
+  // the contact form : sent from the page when it has a service address (data-endpoint), else prepared as an email to support@processtool.net.
+  // (21 Oct 2026 : FormSubmit is taken off - Symantec Endpoint Protection calls its domain malicious, and a visitor on a company laptop
+  // saw "Malicious Site Blocked" on pressing Send.)
   var form = document.querySelector('form.contact');
+  if (form && !form.dataset.endpoint) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = new FormData(form), lines = [];
+      ['name', 'email', 'company', 'industry', 'inquiry', 'message'].forEach(function (k) { if (f.get(k)) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + f.get(k)); });
+      location.href = 'mailto:support@processtool.net?subject=' + encodeURIComponent('Flowmax - ' + (f.get('inquiry') || 'enquiry')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    });
+    form = null;
+  }
   function done(ok, text) {
     var box = document.createElement('div');
     box.className = 'form-done' + (ok ? '' : ' failed');
@@ -38,7 +49,7 @@
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+    fetch(form.dataset.endpoint, {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data)
     }).then(function (r) { return r.json(); }).then(function (r) {
       if (r.success === true || r.success === 'true') done(true);
