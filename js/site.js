@@ -21,14 +21,29 @@
     });
   });
 
-  // the contact form : sent through Web3Forms when its key is set, otherwise prepared as an email
+  // the contact form : sent from the page through FormSubmit (its /ajax/ address), the visitor stays here ; the email address if it fails
   var form = document.querySelector('form.contact');
+  function done(ok, text) {
+    var box = document.createElement('div');
+    box.className = 'form-done' + (ok ? '' : ' failed');
+    box.innerHTML = ok ? '<h3>Thank you, your message is sent.</h3><p>We reply within two business days, from support@processtool.net.</p>'
+      : '<h3>The message could not be sent.</h3><p>' + text + ' Please write to <a href="mailto:support@processtool.net">support@processtool.net</a>.</p>';
+    form.parentNode.replaceChild(box, form);
+  }
   if (form) form.addEventListener('submit', function (e) {
-    var key = form.querySelector('[name=access_key]');
-    if (key && key.value && key.value.indexOf('YOUR-') !== 0) return;      // the service takes it from here
     e.preventDefault();
-    var f = new FormData(form), lines = [];
-    ['name', 'email', 'company', 'industry', 'inquiry', 'message'].forEach(function (k) { if (f.get(k)) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ': ' + f.get(k)); });
-    location.href = 'mailto:support@processtool.net?subject=' + encodeURIComponent('Flowmax - ' + (f.get('inquiry') || 'enquiry')) + '&body=' + encodeURIComponent(lines.join('\n'));
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    if (data._honey) return;                                                  // a robot filled the hidden field
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data)
+    }).then(function (r) { return r.json(); }).then(function (r) {
+      if (r.success === true || r.success === 'true') done(true);
+      else done(false, r.message || '');
+    }).catch(function () { done(false, ''); });
   });
+  if (location.hash === '#sent' && form) done(true);
 })();

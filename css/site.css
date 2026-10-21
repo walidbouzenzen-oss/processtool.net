@@ -308,3 +308,9 @@ table.cmp .no { color: #b8c3d1; }
 @media (max-width: 900px) { .case, .case:nth-child(even) { grid-template-columns: 1fr; gap: 18px; } .case:nth-child(even) img { order: 0; } }
 /* an edition without a price : its licence line under its name */
 .plan .unit { color: var(--dim); font-size: 14px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+/* the contact form once sent */
+.form-done { background: var(--pale); border: 1px solid var(--line); border-radius: 16px; padding: 34px 32px; align-self: start; }
+.form-done h3 { color: var(--deep); font-size: 22px; margin-bottom: 8px; }
+.form-done p { color: var(--soft); }
+.form-done.failed { background: #fff6f0; border-color: #f3d2bf; }
+.form-done a { color: var(--blue); }
