@@ -314,3 +314,5 @@ table.cmp .no { color: #b8c3d1; }
 .form-done p { color: var(--soft); }
 .form-done.failed { background: #fff6f0; border-color: #f3d2bf; }
 .form-done a { color: var(--blue); }
+/* the home picture : monitor and laptop, one transparent picture inside the right column (21 Oct 2026) */
+.duo-hero { width: 100%; display: block; filter: drop-shadow(0 26px 34px rgba(0, 0, 0, .40)); }
