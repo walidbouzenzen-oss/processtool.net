@@ -12,7 +12,7 @@
   document.body.appendChild(box);
   box.addEventListener('click', function () { box.classList.remove('open'); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') box.classList.remove('open'); });
-  document.querySelectorAll('.card > img, .shot img, .gallery img, .lng img, .tile img, img.shot-hero').forEach(function (img) {
+  document.querySelectorAll('.card > img, .shot img, .gallery img, .lng img, .tile img, img.shot-hero, .mshot > img, .case img').forEach(function (img) {
     img.addEventListener('click', function () {
       box.querySelector('img').src = img.currentSrc || img.src;
       var fig = img.closest('figure'), cap = fig ? fig.querySelector('figcaption') : null;

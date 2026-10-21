@@ -269,3 +269,40 @@ table.cmp .no { color: #b8c3d1; }
 .faq .feature h3 { font-size: 17px; }
 @media (max-width: 960px) { .plans.two { grid-template-columns: 1fr; } }
 .page-hero .shot-hero { cursor: zoom-in; }
+/* the free-trial link under a quote button */
+.plan button.btn { justify-content: center; }
+.plan .trial-link { display: block; text-align: center; margin-top: 10px; font-size: 14px; color: var(--blue); }
+
+/* ------------------------------------------------------------------ round of 21 Oct 2026 */
+/* the home picture : flat, in a window frame, no tilt */
+.appframe { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 70px rgba(0, 0, 0, .42); border: 1px solid rgba(255, 255, 255, .18); }
+.appframe .bar, .mshot .bar { display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; background: #eef2f7; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--soft); white-space: nowrap; overflow: hidden; }
+.appframe .bar img, .mshot .bar img { width: 16px; height: 16px; }
+.appframe .bar b, .mshot .bar b { margin-left: auto; font-weight: 400; color: var(--dim); font-size: 11px; letter-spacing: .1em; }
+.appframe img.shot-hero { width: 100%; display: block; cursor: zoom-in; }
+/* the mode cards : the name on a coloured band, a framed close-up of the program */
+.m-liquid { --mc: var(--blue); }
+.m-transient { --mc: #d9480f; }
+.m-gas { --mc: var(--green); }
+.modes3 .mhead { display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: var(--mc); color: #fff; }
+.modes3 .mhead .mic { width: 50px; height: 50px; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.modes3 .mhead .mic svg { width: 32px; height: 32px; display: block; }
+.modes3 .mhead .mk { color: rgba(255, 255, 255, .82); margin: 0; }
+.modes3 .mhead h3 { color: #fff; font-size: 27px; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+.modes3 .mshot { margin: 18px 18px 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 22px rgba(6, 42, 82, .10); background: #fff; }
+.modes3 .mshot .bar { height: 26px; font-size: 11.5px; }
+.modes3 .mshot > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; cursor: zoom-in; display: block; }
+.modes3 .card .t { padding-top: 16px; }
+.modes3 .m-gas .new { background: #fff; color: var(--green); }
+/* one picture alone in a gallery */
+.gallery.one { grid-template-columns: 1fr; max-width: 920px; margin-left: auto; margin-right: auto; }
+/* examples : picture and text side by side, alternating */
+.cases { display: grid; gap: 46px; margin-top: 40px; }
+.case { display: grid; grid-template-columns: 1.45fr 1fr; gap: 38px; align-items: center; }
+.case img { width: 100%; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff; cursor: zoom-in; }
+.case:nth-child(even) { grid-template-columns: 1fr 1.45fr; }
+.case:nth-child(even) img { order: 2; }
+.case .mk { display: block; color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+.case h3 { font-size: 22px; margin-bottom: 10px; color: var(--deep); }
+.case p { color: var(--soft); }
+@media (max-width: 900px) { .case, .case:nth-child(even) { grid-template-columns: 1fr; gap: 18px; } .case:nth-child(even) img { order: 0; } }
