@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=202611031623">
+<link rel="stylesheet" href="css/site.css?v=202611032306">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Flowmax","applicationCategory":"EngineeringApplication","operatingSystem":"Windows","publisher":{"@type":"Organization","name":"ProcessTool","email":"support@processtool.net"}}</script>
 </head>
 <body>
@@ -30,10 +30,19 @@
   <a class="btn white" href="contact.html">Free trial</a>
 </div></header>
 <div class="hero page-hero plain"><div class="wrap">
-  <div><div class="kicker">Case study &middot; fire water</div><h1>From the fire pump to the last nozzle.</h1><p>Four fire water jobs, one tool: a plant's ring main, a deluge on a vessel, the sprinklers of a building, and the first seconds after a deluge valve opens on dry pipe. Each a Flowmax model, solved, with the numbers it gave.</p><div class="cta"><a class="btn white" href="contact.html">Request a free trial</a><a class="btn out" href="liquid.html#fire">Fire water in Liquid &rarr;</a></div></div>
+  <div><div class="kicker">Case study &middot; fire water</div><h1>From the fire pump to the last nozzle.</h1><p>Four fire water jobs, one tool: a plant's ring main, a deluge on a vessel, the sprinklers of a building, and the first seconds after a deluge valve opens on dry pipe. Each a Flowmax model, solved, with the numbers it gave.</p><div class="cta"><a class="btn white" href="contact.html">Request a free trial</a><a class="btn out" href="#film">&#9654; Watch the film (84 s)</a></div></div>
   
 </div><svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C360,100 720,10 1080,40 C1260,55 1380,70 1440,60 L1440,90 L0,90 Z" fill="#fff"/></svg></div>
 </div>
+<section id="film"><div class="wrap">
+  <div class="center"><span class="label">The film &middot; 1:24</span><h2>Fire water in Flowmax.</h2><p>The plant's ring main in one model, each deluge a block and every fire case in the Scenario Manager, a deluge on the isometric sheet, and the same deluge in time as its dry pipe fills.</p></div>
+  <div class="film"><video src="video/fire-water-film.mp4" poster="video/fire-water-film.jpg" controls preload="none" playsinline></video></div>
+</div></section>
+<section class=pale id="tutorial"><div class="wrap">
+  <div class="center"><span class="label">Tutorial 4 &middot; 1:47</span><h2>Watch it in the program.</h2><p>A simple deluge on the isometric sheet: drawn, run on a first guess, Adjust for the pressure the take-off must give, the lines sized by velocity, and Adjust again.</p></div>
+  <div class="film"><video src="video/tutorial-4-fire-water.mp4" poster="video/tutorial-4-fire-water.jpg" controls preload="none" playsinline></video></div>
+</div></section>
+
 <section class="split" style="padding-top:44px"><div class="wrap">
   <div class="txt"><span class="label">Case 1 &middot; Liquid</span><h2>A plant's ring main and its fire pumps.</h2>
     <p>A plant of 420 by 260 m: a 14 in ring main round it and two 12 in cross mains with twelve sectional valves, 19 hydrants and 10 monitors, two storage tanks and the pump house, and the deluge valve, restriction orifice and cooling ring of each of four storage tanks. 268 links, every pipe its true length.</p>
@@ -61,9 +70,10 @@
 </div></section>
 <section class="pale split flip"><div class="wrap">
   <div class="txt"><span class="label">Case 4 &middot; Transient</span><h2>In time: dry pipe, deluge filling, water hammer.</h2>
-    <p>When a deluge valve opens on dry pipe, the water takes time to reach the last nozzle, and the front that arrives there can put a pressure on the pipe that the steady state never shows. The same Flowmax model, run in the Transient mode, answers both.</p>
-    <table class="data" style="margin-top:20px"><tr><th>Dry systems in time</th><th>Flowmax</th></tr><tr><td>Three deluge branches full of water</td><td><b>8.6, 10.5 and 11.9 s</b></td></tr><tr><td>Offshore dry riser: water at the top deck</td><td><b>33.4 s</b></td></tr><tr><td>Deluge: first and last nozzles flowing</td><td><b>3.6 and 6.9 s</b></td></tr><tr><td>Fire cases against a 16 barg limit</td><td><b>8 cases, one chart</b></td></tr></table></div>
-  <div class="shot"><img src="img/fw-tr-filling.webp" alt="The filling of three deluge branches in time, in the Transient mode"></div>
+    <p>When a deluge valve opens on dry pipe, the water takes time to reach the last nozzle, and the front that arrives there can put a pressure on the pipe that the steady state never shows. The same Flowmax model, run in the Transient mode, answers both. On the drum deluge, a capped dead leg at the end of each header traps air that cushions the arriving water.</p>
+    <table class="data" style="margin-top:20px"><tr><th>Dry systems in time</th><th>Flowmax</th></tr><tr><td>Deluge on the drum: last nozzle wet, valve opening in 3 s</td><td><b>4.3 s after it starts to open</b></td></tr><tr><td>Header ends with a 4 m capped dead leg</td><td><b>12 barg at most, the air cushions the front</b></td></tr><tr><td>Three deluge branches full of water</td><td><b>8.6, 10.5 and 11.9 s</b></td></tr><tr><td>Offshore dry riser: water at the top deck</td><td><b>33.4 s</b></td></tr><tr><td>Deluge: first and last nozzles flowing</td><td><b>3.6 and 6.9 s</b></td></tr><tr><td>Fire cases against a 16 barg limit</td><td><b>8 cases, one chart</b></td></tr></table></div>
+  <div><div class="shot"><img src="img/fw-drum-deadleg.webp" alt="The drum deluge in the Transient mode: the pressure at the header ends as the water arrives, each end with a capped dead leg"></div>
+    <div class="shot" style="margin-top:16px"><img src="img/fw-tr-filling.webp" alt="The filling of three deluge branches in time, in the Transient mode"></div></div>
 </div></section>
 <section><div class="wrap">
   <div class="center"><span class="label">As a service</span><h2>Fire water documentation, brought up to date.</h2><p>Plants change and the fire water documents fall behind. ProcessTool models the network as built, runs every fire case following NFPA calculation methods, checks the fire pumps against their curves, and issues the calculation report, the line list and the nozzle layouts, with the Flowmax model so they stay up to date.</p></div>
@@ -79,6 +89,6 @@
   </div>
   <div class="base"><span>&copy; 2026 ProcessTool</span><span>Flowmax is a product of ProcessTool</span></div>
 </div></footer>
-<script src="js/site.js?v=202611031623"></script>
+<script src="js/site.js?v=202611032306"></script>
 </body>
 </html>
